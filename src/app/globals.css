@@ -77,6 +77,11 @@
   --nav-height: 80px;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -224,9 +229,22 @@ body {
   color: var(--text-light);
   font-size: 24px;
   cursor: pointer;
+  padding: 8px;
 }
 
-/* Sidebar styles */
+.mobile-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 90;
+}
+
+/* Sidebar Mobile Toggle Bar */
+.mobile-sidebar-toggle-bar {
+  display: none;
+}
+
 .panel-sidebar {
   width: 320px;
   flex-shrink: 0;
@@ -363,6 +381,10 @@ body {
   gap: 16px;
 }
 
+.img-card-wrapper {
+  position: relative;
+}
+
 .img-card {
   background-color: #1a1917;
   overflow: hidden;
@@ -446,7 +468,7 @@ body {
   text-decoration: underline;
 }
 
-/* Artwork Single View - UX & Hierarchy Enhancements */
+/* Artwork Single View */
 .artwork-layout {
   display: flex;
   position: relative;
@@ -741,11 +763,12 @@ body {
   position: relative;
   text-align: center;
   overflow: hidden;
+  padding: 2rem 1rem;
 }
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(3.5rem, 9vw, 11rem);
+  font-size: clamp(2.8rem, 8vw, 11rem);
   font-weight: 800;
   text-transform: uppercase;
   color: var(--text-light);
@@ -927,12 +950,14 @@ body.admin-edit-active {
   font-size: 12px;
   color: var(--text-light);
   box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  overflow-x: auto;
 }
 
 .admin-bar-left, .admin-bar-center, .admin-bar-right {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
+  white-space: nowrap;
 }
 
 .admin-bar-badge {
@@ -1084,7 +1109,7 @@ body.admin-edit-active .img-card-wrapper:hover .admin-inline-edit-badge {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .live-edit-modal {
@@ -1093,7 +1118,7 @@ body.admin-edit-active .img-card-wrapper:hover .admin-inline-edit-badge {
   background-color: #181715;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
-  padding: 2.5rem;
+  padding: 2rem;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
   max-height: 90vh;
   overflow-y: auto;
@@ -1257,33 +1282,242 @@ body.admin-edit-active .img-card-wrapper:hover .admin-inline-edit-badge {
   }
 }
 
-/* Responsive */
+/* Responsive Styles for Mobile & Tablets */
 @media (max-width: 1024px) {
   .panel-sidebar {
-    width: 260px;
+    width: 280px;
   }
   .artwork-layout {
     flex-direction: column;
   }
-  .artwork-image-pane, .artwork-info-pane {
+  .artwork-image-pane {
     width: 100%;
-    padding-top: 4rem;
+    padding: 4.5rem 1.5rem 1.5rem;
+  }
+  .artwork-image-container {
+    height: 55vh;
+  }
+  .artwork-info-pane {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 }
 
 @media (max-width: 768px) {
-  .page-layout {
-    flex-direction: column;
+  :root {
+    --nav-height: 64px;
   }
+
+  .navbar {
+    padding: 0 1.25rem;
+    height: var(--nav-height);
+  }
+
+  .nav-logo {
+    font-size: 15px;
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background-color: #121110;
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--accent);
+    display: none;
+    z-index: 100;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+  }
+
+  .nav-links.mobile-open {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    height: 54px;
+    padding: 0 1.5rem;
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 20px;
+    justify-content: flex-start;
+  }
+
+  .nav-link.active {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background-color: rgba(224, 74, 44, 0.15);
+    color: #ffffff;
+  }
+
+  .nav-link.contact-link {
+    margin: 1rem 1.5rem 0.5rem;
+    width: calc(100% - 3rem);
+    height: 44px;
+    justify-content: center;
+  }
+
+  /* Mobile Category Selector Accordion */
+  .mobile-sidebar-toggle-bar {
+    display: block;
+    padding: 10px 1.25rem;
+    background-color: #181715;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobile-sidebar-toggle-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 10px 16px;
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+  }
+
   .panel-sidebar {
     width: 100%;
     height: auto;
     position: static;
+    display: none;
+    padding: 1rem 0;
+    border-right: none;
+    border-bottom: 2px solid var(--accent);
   }
+
+  .panel-sidebar.mobile-expanded {
+    display: block;
+  }
+
+  .panel-sidebar-title {
+    font-size: 24px;
+    padding: 0 1.25rem 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar-item-wrap {
+    padding: 10px 1.25rem;
+  }
+
+  .sidebar-item {
+    font-size: 18px;
+  }
+
+  .page-layout {
+    flex-direction: column;
+  }
+
   .panel-main {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
+
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .panel-folder-name {
+    font-size: 1.8rem;
+  }
+
+  .img-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .img-info {
+    padding: 0.75rem;
+  }
+
+  .img-title {
+    font-size: 13px !important;
+  }
+
+  .img-desc {
+    font-size: 11px !important;
+  }
+
   .contact-section {
-    padding: 3rem 1.5rem;
+    padding: 3rem 1.25rem;
+  }
+
+  .contact-grid {
+    gap: 2.5rem;
+  }
+
+  .artwork-top-bar {
+    padding: 0 1rem;
+    height: 54px;
+  }
+
+  .artwork-image-pane {
+    padding: 4rem 1rem 1rem;
+  }
+
+  .artwork-image-container {
+    height: 40vh;
+  }
+
+  .artwork-info-pane {
+    padding: 1.5rem 1rem;
+  }
+
+  .artwork-title {
+    font-size: 1.75rem;
+  }
+
+  .artwork-nav {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .nav-btn-pill {
+    padding: 8px 14px;
+    font-size: 11px;
+  }
+
+  .admin-floating-switch-container {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .admin-floating-switch {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .img-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .hero-title {
+    font-size: 2.8rem;
   }
 }
