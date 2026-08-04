@@ -1,0 +1,58 @@
+{
+  "name": "Hiep",
+  "title": "Visual Artist & Designer",
+  "email": "hello@hiepicture.com",
+  "phone": "+84 123 456 789",
+  "location": "Ho Chi Minh City, Vietnam",
+  "socialLinks": {
+    "instagram": "https://instagram.com/hiepicture",
+    "behance": "https://behance.net/hiepicture",
+    "dribbble": "https://dribbble.com/hiepicture"
+  },
+  "about": "Hello, I'm Hiep, a visual artist and designer based in Ho Chi Minh City. My work is a blend of traditional Vietnamese motifs and contemporary design principles. I specialize in illustration, digital art, and brand identity.\n\nI believe in the power of visual storytelling to connect people and convey complex emotions. Whether it's a painting, a logo, or an experimental coding project, I aim to create meaningful and impactful experiences.\n\nCurrently open for freelance projects and collaborations.",
+  "timeline": [
+    {
+      "year": "2024",
+      "events": [
+        "Solo exhibition 'Echoes of Saigon' at The Factory Contemporary Arts Centre.",
+        "Featured artist on Behance Graphic Design gallery."
+      ]
+    },
+    {
+      "year": "2023",
+      "events": [
+        "Won Best Identity Design at Vietnam Design Week.",
+        "Started 'Kafka Collection' illustration series."
+      ]
+    },
+    {
+      "year": "2022",
+      "events": [
+        "Graduated from RMIT University Vietnam.",
+        "First group exhibition 'New Voices'."
+      ]
+    },
+    {
+      "year": "2020",
+      "events": [
+        "Started freelancing as a graphic designer."
+      ]
+    }
+  ],
+  "skills": [
+    "Illustration",
+    "Digital Painting",
+    "Brand Identity",
+    "Typography",
+    "Packaging Design",
+    "UI/UX Design",
+    "Creative Coding"
+  ],
+  "education": [
+    {
+      "year": "2018 - 2022",
+      "institution": "RMIT University Vietnam",
+      "degree": "Bachelor of Design (Digital Media)"
+    }
+  ]
+}

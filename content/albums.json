@@ -1,0 +1,233 @@
+[
+  {
+    "id": "album-covers",
+    "title": "Album covers",
+    "slug": "album-covers",
+    "categoryId": "art",
+    "description": "Selected album cover art & graphic designs for music projects.",
+    "coverImage": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",
+    "artworkCount": 4,
+    "order": 1
+  },
+  {
+    "id": "tu-thuc",
+    "title": "Từ Thức fairy tales",
+    "slug": "tu-thuc",
+    "categoryId": "art",
+    "subcategoryId": "illustration",
+    "description": "Illustrations for the renowned Vietnamese fairy tale 'Từ Thức gặp tiên'.",
+    "coverImage": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800",
+    "artworkCount": 4,
+    "order": 2
+  },
+  {
+    "id": "kafka-collection",
+    "title": "Metamorphosis (F.Kafka)",
+    "slug": "kafka-collection",
+    "categoryId": "art",
+    "subcategoryId": "illustration",
+    "description": "Dark surrealist artwork series exploring Franz Kafka's Metamorphosis.",
+    "coverImage": "https://images.unsplash.com/photo-1549490349-8643362247b5?w=800",
+    "artworkCount": 4,
+    "order": 3
+  },
+  {
+    "id": "trung-nguyen",
+    "title": "Trung Nguyên epic",
+    "slug": "trung-nguyen",
+    "categoryId": "art",
+    "subcategoryId": "illustration",
+    "description": "Epic historical and cultural illustrations for Trung Nguyên brand.",
+    "coverImage": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800",
+    "artworkCount": 3,
+    "order": 4
+  },
+  {
+    "id": "illustration-others",
+    "title": "Illustration (Others)",
+    "slug": "illustration-others",
+    "categoryId": "art",
+    "subcategoryId": "illustration",
+    "description": "Misc editorial and book illustrations.",
+    "coverImage": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800",
+    "artworkCount": 3,
+    "order": 5
+  },
+  {
+    "id": "digital-fantasy",
+    "title": "Digital fantasy",
+    "slug": "digital-fantasy",
+    "categoryId": "art",
+    "description": "Concept digital paintings of mythical worlds and futuristic realms.",
+    "coverImage": "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800",
+    "artworkCount": 4,
+    "order": 6
+  },
+  {
+    "id": "goats-horses",
+    "title": "Goats & horses",
+    "slug": "goats-horses",
+    "categoryId": "art",
+    "description": "Traditional ink and digital sketches of goats and horses.",
+    "coverImage": "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?w=800",
+    "artworkCount": 3,
+    "order": 7
+  },
+  {
+    "id": "concepts",
+    "title": "Concepts",
+    "slug": "concepts",
+    "categoryId": "art",
+    "description": "Exploratory visual concept art and environment design.",
+    "coverImage": "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800",
+    "artworkCount": 3,
+    "order": 8
+  },
+  {
+    "id": "fb-organic",
+    "title": "F&B, Organic",
+    "slug": "fb-organic",
+    "categoryId": "design",
+    "subcategoryId": "logo-emblem",
+    "description": "Logo & branding identity for organic F&B clients.",
+    "coverImage": "https://images.unsplash.com/photo-1482160549825-59d1b23cb208?w=800",
+    "artworkCount": 3,
+    "order": 9
+  },
+  {
+    "id": "education",
+    "title": "Education",
+    "slug": "education",
+    "categoryId": "design",
+    "subcategoryId": "logo-emblem",
+    "description": "Emblems & visual design for academic institutions.",
+    "coverImage": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800",
+    "artworkCount": 3,
+    "order": 10
+  },
+  {
+    "id": "tech-works",
+    "title": "Tech/Works",
+    "slug": "tech-works",
+    "categoryId": "design",
+    "subcategoryId": "logo-emblem",
+    "description": "Tech enterprise logos and visual systems.",
+    "coverImage": "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800",
+    "artworkCount": 3,
+    "order": 11
+  },
+  {
+    "id": "entertainment",
+    "title": "Entertainment",
+    "slug": "entertainment",
+    "categoryId": "design",
+    "subcategoryId": "logo-emblem",
+    "description": "Visual identities for media, games, and entertainment events.",
+    "coverImage": "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=800",
+    "artworkCount": 3,
+    "order": 12
+  },
+  {
+    "id": "logo-others",
+    "title": "Logos (Others)",
+    "slug": "logo-others",
+    "categoryId": "design",
+    "subcategoryId": "logo-emblem",
+    "description": "Selected logo and crest collection.",
+    "coverImage": "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800",
+    "artworkCount": 3,
+    "order": 13
+  },
+  {
+    "id": "dao-toc",
+    "title": "Dao Toc emblem",
+    "slug": "dao-toc",
+    "categoryId": "design",
+    "subcategoryId": "case-studies",
+    "description": "In-depth case study on the Dao Toc heraldry & emblem design.",
+    "coverImage": "https://images.unsplash.com/photo-1618331835717-801e976710b2?w=800",
+    "artworkCount": 4,
+    "order": 14
+  },
+  {
+    "id": "thuong-tra",
+    "title": "Thuong Tra logo",
+    "slug": "thuong-tra",
+    "categoryId": "design",
+    "subcategoryId": "case-studies",
+    "description": "Complete branding case study for Thuong Tra heritage tea.",
+    "coverImage": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800",
+    "artworkCount": 4,
+    "order": 15
+  },
+  {
+    "id": "visual-system",
+    "title": "Visual system",
+    "slug": "visual-system",
+    "categoryId": "design",
+    "description": "Comprehensive design systems and brand guidelines.",
+    "coverImage": "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?w=800",
+    "artworkCount": 3,
+    "order": 16
+  },
+  {
+    "id": "posters",
+    "title": "Posters",
+    "slug": "posters",
+    "categoryId": "design",
+    "description": "Event and exhibition posters design.",
+    "coverImage": "https://images.unsplash.com/photo-1569172122301-bc5008bc09c5?w=800",
+    "artworkCount": 3,
+    "order": 17
+  },
+  {
+    "id": "publishing",
+    "title": "Publishing",
+    "slug": "publishing",
+    "categoryId": "design",
+    "description": "Book cover sets and publication design.",
+    "coverImage": "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800",
+    "artworkCount": 3,
+    "order": 18
+  },
+  {
+    "id": "river-phoenix",
+    "title": "River Phoenix",
+    "slug": "river-phoenix",
+    "categoryId": "play",
+    "description": "Tribute art project dedicated to River Phoenix.",
+    "coverImage": "https://images.unsplash.com/photo-1517697471339-4aa32003c11a?w=800",
+    "artworkCount": 3,
+    "order": 19
+  },
+  {
+    "id": "typography-lettering",
+    "title": "Typography & Lettering",
+    "slug": "typography-lettering",
+    "categoryId": "play",
+    "description": "Experimental custom typography and calligraphic lettering.",
+    "coverImage": "https://images.unsplash.com/photo-1569172122301-bc5008bc09c5?w=800",
+    "artworkCount": 4,
+    "order": 20
+  },
+  {
+    "id": "play-concepts",
+    "title": "Concepts (Play)",
+    "slug": "play-concepts",
+    "categoryId": "play",
+    "description": "Visual play and experimental concepts.",
+    "coverImage": "https://images.unsplash.com/photo-1515405295579-ba7b45403062?w=800",
+    "artworkCount": 3,
+    "order": 21
+  },
+  {
+    "id": "play-others",
+    "title": "Others (Play)",
+    "slug": "play-others",
+    "categoryId": "play",
+    "description": "Misc creative experiments.",
+    "coverImage": "https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?w=800",
+    "artworkCount": 3,
+    "order": 22
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "post-1",
+    "title": "The Inspiration Behind Kafka Collection",
+    "slug": "inspiration-behind-kafka-collection",
+    "excerpt": "Exploring the surreal world of Franz Kafka and translating it into visual art.",
+    "content": "Franz Kafka's works have always fascinated me with their surreal and existential themes. The 'Kafka Collection' is my attempt to translate the atmosphere of his stories—such as 'The Metamorphosis' and 'The Trial'—into visual art.\n\nI focused on using stark contrasts, intricate linework, and a monochromatic palette to convey the feelings of alienation and bureaucratic absurdity that permeate his writing. It was a challenging but rewarding process to visually represent such complex psychological narratives.\n\nI hope these illustrations resonate with other fans of Kafka's literature and offer a new perspective on his enduring legacy.",
+    "coverImage": "https://images.unsplash.com/photo-1549490349-8643362247b5?w=800",
+    "tags": ["inspiration", "illustration", "kafka"],
+    "publishedAt": "2024-01-20T10:00:00Z",
+    "author": "Hiep"
+  },
+  {
+    "id": "post-2",
+    "title": "Modernizing Vietnamese Typography",
+    "slug": "modernizing-vietnamese-typography",
+    "excerpt": "My journey in designing custom typefaces that honor Vietnamese heritage.",
+    "content": "Typography is more than just arranging letters; it's about conveying culture and identity. In my recent project 'Saigon Sans', I set out to design a typeface that feels modern yet distinctly Vietnamese.\n\nI drew inspiration from old shop signs in Cho Lon and the elegant curves found in traditional woodblock prints. The challenge was balancing these historical references with the clean, functional requirements of a contemporary sans-serif font.\n\nI believe that as Vietnamese designers, we have a unique opportunity to contribute our voice to the global design conversation by thoughtfully integrating our heritage into our work.",
+    "coverImage": "https://images.unsplash.com/photo-1569172122301-bc5008bc09c5?w=800",
+    "tags": ["typography", "design", "vietnam"],
+    "publishedAt": "2024-05-25T10:00:00Z",
+    "author": "Hiep"
+  },
+  {
+    "id": "post-3",
+    "title": "Experimenting with Creative Coding",
+    "slug": "experimenting-with-creative-coding",
+    "excerpt": "Diving into p5.js and the world of generative art.",
+    "content": "As a visual artist, I'm used to creating with my hands or a stylus. Recently, I've started exploring creative coding using p5.js, and it has opened up a completely new way of thinking about art.\n\nInstead of drawing directly, I'm writing rules and algorithms to generate imagery. It's fascinating to see how small changes in code can lead to vastly different and unexpected visual outcomes. It introduces an element of surprise and collaboration with the machine.\n\nWhile the learning curve can be steep, the ability to create dynamic, interactive, and endlessly iterating artworks is incredibly exciting for my future projects.",
+    "coverImage": "https://images.unsplash.com/photo-1515405295579-ba7b45403062?w=800",
+    "tags": ["creative coding", "generative art", "p5js"],
+    "publishedAt": "2024-08-05T10:00:00Z",
+    "author": "Hiep"
+  }
+]
