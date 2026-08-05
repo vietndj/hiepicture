@@ -176,24 +176,21 @@ body {
   z-index: 90;
 }
 
-/* 3D Parallax Mouse Hover Hero Page */
-.hero-parallax-wrapper {
+/* Static Hero Page - Exact Match to Design Mockup */
+.hero-static-wrapper {
   position: relative;
   height: calc(100vh - var(--nav-height));
   width: 100%;
   overflow: hidden;
-  perspective: 1000px;
   background-color: #d84c2a;
 }
 
-.hero-parallax-bg {
+.hero-static-bg {
   position: absolute;
-  inset: -60px;
+  inset: 0;
   background-size: cover;
   background-position: center;
-  transition: transform 0.12s ease-out;
-  will-change: transform;
-  transform-style: preserve-3d;
+  background-repeat: no-repeat;
 }
 
 .hero-content-layer {
@@ -209,9 +206,10 @@ body {
   pointer-events: none;
 }
 
-.hero-3d-title-wrap {
-  transition: transform 0.12s ease-out;
-  will-change: transform;
+.hero-title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-mockup-title {
@@ -249,8 +247,6 @@ body {
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
   text-align: right;
-  transition: transform 0.12s ease-out;
-  will-change: transform;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
