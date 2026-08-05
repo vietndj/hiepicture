@@ -1,112 +1,102 @@
 [
   {
     "id": "art",
-    "name": "ART",
     "slug": "art",
-    "description": "Working extensively in both the fields of art & design since 90s. Versatile but strict eyes will help you stay away from mediocrity.",
+    "name": "ART",
+    "description": "Short description about all albums above in Art menu",
     "items": [
       {
         "id": "album-covers",
-        "name": "Album covers",
-        "slug": "album-covers"
+        "slug": "album-covers",
+        "name": "Album covers"
       },
       {
         "id": "illustration",
-        "name": "Illustration",
         "slug": "illustration",
+        "name": "Illustration",
         "children": [
-          { "id": "tu-thuc", "name": "Từ Thức fairy tales", "slug": "tu-thuc" },
-          { "id": "kafka-collection", "name": "Metamorphosis (F.Kafka)", "slug": "kafka-collection" },
-          { "id": "trung-nguyen", "name": "Trung Nguyên epic", "slug": "trung-nguyen" },
-          { "id": "illustration-others", "name": "Others", "slug": "illustration-others" }
+          { "id": "tu-thuc", "slug": "tu-thuc", "name": "Từ Thức fairy tales" },
+          { "id": "kafka-collection", "slug": "kafka-collection", "name": "Metamorphosis (F.Kafka)" },
+          { "id": "trung-nguyen", "slug": "trung-nguyen", "name": "Trung Nguyên epic" },
+          { "id": "illustration-others", "slug": "illustration-others", "name": "Others" }
         ]
       },
       {
         "id": "digital-fantasy",
-        "name": "Digital fantasy",
-        "slug": "digital-fantasy"
+        "slug": "digital-fantasy",
+        "name": "Digital fantasy"
       },
       {
-        "id": "goats-horses",
-        "name": "Goats & horses",
-        "slug": "goats-horses"
+        "id": "goats-and-horses",
+        "slug": "goats-and-horses",
+        "name": "Goats & horses"
       },
       {
         "id": "concepts",
-        "name": "Concepts",
-        "slug": "concepts"
+        "slug": "concepts",
+        "name": "Concepts"
       }
     ]
   },
   {
     "id": "design",
-    "name": "DESIGN",
     "slug": "design",
-    "description": "Commercial design, brand identity, logos, posters, and publishing work.",
+    "name": "DESIGN",
+    "description": "Short description about all albums above in Design menu",
     "items": [
       {
-        "id": "logo-emblem",
+        "id": "logo-emblem-heraldry",
+        "slug": "logo-emblem-heraldry",
         "name": "Logo/Emblem/Heraldry",
-        "slug": "logo-emblem",
         "children": [
-          { "id": "fb-organic", "name": "F&B, Organic", "slug": "fb-organic" },
-          { "id": "education", "name": "Education", "slug": "education" },
-          { "id": "tech-works", "name": "Tech/Works", "slug": "tech-works" },
-          { "id": "entertainment", "name": "Entertainment", "slug": "entertainment" },
-          { "id": "logo-others", "name": "Others", "slug": "logo-others" }
+          { "id": "fb-organic", "slug": "fb-organic", "name": "F&B, Organic" },
+          { "id": "education", "slug": "education", "name": "Education" },
+          { "id": "tech-works", "slug": "tech-works", "name": "Tech/Works" },
+          { "id": "entertainment", "slug": "entertainment", "name": "Entertainment" },
+          { "id": "logo-others", "slug": "logo-others", "name": "Others" }
         ]
       },
       {
         "id": "case-studies",
-        "name": "Case studies",
         "slug": "case-studies",
+        "name": "Case studies",
         "children": [
-          { "id": "dao-toc", "name": "Dao Toc emblem", "slug": "dao-toc" },
-          { "id": "thuong-tra", "name": "Thuong Tra logo", "slug": "thuong-tra" }
+          { "id": "dao-toc", "slug": "dao-toc", "name": "Dao Toc emblem" },
+          { "id": "thuong-tra", "slug": "thuong-tra", "name": "Thuong Tra logo" }
         ]
       },
       {
         "id": "visual-system",
-        "name": "Visual system",
-        "slug": "visual-system"
+        "slug": "visual-system",
+        "name": "Visual system"
       },
       {
         "id": "posters",
-        "name": "Posters",
-        "slug": "posters"
+        "slug": "posters",
+        "name": "Posters"
       },
       {
         "id": "publishing",
-        "name": "Publishing",
-        "slug": "publishing"
+        "slug": "publishing",
+        "name": "Publishing"
       }
     ]
   },
   {
     "id": "play",
-    "name": "PLAY",
     "slug": "play",
-    "description": "Personal experiments, photography, typography studies, and creative play.",
+    "name": "PLAY",
+    "description": "Experimental and personal creative works",
     "items": [
       {
         "id": "river-phoenix",
-        "name": "River Phoenix",
-        "slug": "river-phoenix"
+        "slug": "river-phoenix",
+        "name": "River Phoenix Tribute"
       },
       {
         "id": "typography-lettering",
-        "name": "Typography & Lettering",
-        "slug": "typography-lettering"
-      },
-      {
-        "id": "play-concepts",
-        "name": "Concepts",
-        "slug": "play-concepts"
-      },
-      {
-        "id": "play-others",
-        "name": "Others",
-        "slug": "play-others"
+        "slug": "typography-lettering",
+        "name": "Calligraphy & Lettering"
       }
     ]
   }

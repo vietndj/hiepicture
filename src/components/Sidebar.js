@@ -28,41 +28,37 @@ export default function Sidebar({ categories, currentCategory, activeSlug }) {
         </button>
       </div>
 
-      {/* Main Sidebar Container (Desktop & Mobile Drawer) */}
+      {/* Main Sidebar Container matching Design Slides 3, 4, 5 */}
       <aside className={`panel-sidebar ${isMobileOpen ? 'mobile-expanded' : ''}`}>
-        <h2 className="panel-sidebar-title">{categoryObj.name}</h2>
-        
         <ul className="sidebar-list">
           {categoryObj.items.map((item) => {
             const isItemActive = activeSlug === item.slug;
+            const hasChildren = item.children && item.children.length > 0;
+            const isChildActive = hasChildren && item.children.some(c => c.slug === activeSlug);
 
             return (
-              <li key={item.id}>
+              <li key={item.id} className="sidebar-group">
                 <Link 
                   href={`/${currentCategory}/${item.slug}`}
-                  className={`sidebar-item-wrap ${isItemActive ? 'active' : ''}`}
+                  className={`sidebar-item-header ${(isItemActive || isChildActive) ? 'active' : ''}`}
                   onClick={() => setIsMobileOpen(false)}
                 >
-                  <span className="sidebar-item">
-                    {item.name}
-                  </span>
+                  {item.name}
                 </Link>
                 
-                {item.children && item.children.length > 0 && (
-                  <ul className="sidebar-list">
+                {hasChildren && (
+                  <ul className="sidebar-sublist">
                     {item.children.map((child) => {
-                      const isChildActive = activeSlug === child.slug;
+                      const isThisChildActive = activeSlug === child.slug;
 
                       return (
                         <li key={child.id}>
                           <Link 
                             href={`/${currentCategory}/${child.slug}`}
-                            className={`sidebar-item-wrap ${isChildActive ? 'active' : ''}`}
+                            className={`sidebar-subitem ${isThisChildActive ? 'active' : ''}`}
                             onClick={() => setIsMobileOpen(false)}
                           >
-                            <span className="sidebar-item depth-1">
-                              <span className="sidebar-bullet">•</span> {child.name}
-                            </span>
+                            <span className="sidebar-bullet">•</span> {child.name}
                           </Link>
                         </li>
                       );

@@ -1,58 +1,43 @@
 {
-  "name": "Hiep",
+  "name": "HIEP",
   "title": "Visual Artist & Designer",
-  "email": "hello@hiepicture.com",
-  "phone": "+84 123 456 789",
-  "location": "Ho Chi Minh City, Vietnam",
-  "socialLinks": {
-    "instagram": "https://instagram.com/hiepicture",
-    "behance": "https://behance.net/hiepicture",
-    "dribbble": "https://dribbble.com/hiepicture"
-  },
-  "about": "Hello, I'm Hiep, a visual artist and designer based in Ho Chi Minh City. My work is a blend of traditional Vietnamese motifs and contemporary design principles. I specialize in illustration, digital art, and brand identity.\n\nI believe in the power of visual storytelling to connect people and convey complex emotions. Whether it's a painting, a logo, or an experimental coding project, I aim to create meaningful and impactful experiences.\n\nCurrently open for freelance projects and collaborations.",
-  "timeline": [
-    {
-      "year": "2024",
-      "events": [
-        "Solo exhibition 'Echoes of Saigon' at The Factory Contemporary Arts Centre.",
-        "Featured artist on Behance Graphic Design gallery."
-      ]
-    },
-    {
-      "year": "2023",
-      "events": [
-        "Won Best Identity Design at Vietnam Design Week.",
-        "Started 'Kafka Collection' illustration series."
-      ]
-    },
-    {
-      "year": "2022",
-      "events": [
-        "Graduated from RMIT University Vietnam.",
-        "First group exhibition 'New Voices'."
-      ]
-    },
-    {
-      "year": "2020",
-      "events": [
-        "Started freelancing as a graphic designer."
-      ]
-    }
+  "email": "hadunghiep@gmail.com",
+  "phone": "0983 111 480",
+  "location": "Hanoi / Ho Chi Minh City",
+  "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+  "occupation": [
+    "2010 - now: Independent consultant/advisor/trainer in image solution for VTVs, VTC-Intecom, VinEdu/Motion/Retail, TienphongBank, Hyperlogy, Niteco, Victorymedia, ...",
+    "2010 - now: Assuming the title of Academic Head at FPT-Arena",
+    "2012: Guest lecturer at the London College for Fashion Studies and Keuka Program - ISVNU;",
+    "2008 - 2010: Founding lecturer at Omega - the first experimental school for design in Hanoi;",
+    "2003 - 2005: Graphic designer at CDT, HGK, i-Pro. Clients served: Sofitel Metropole Hanoi, Melia, Sheraton, Horizon (Swiss Bell), Liberty Mutual, Path-VN, EU-VN, HaiLong Junk, Lexim, ...",
+    "2000 - 2004: Lecturer of academic drawing and visual theory at 360° fine arts studio."
   ],
-  "skills": [
-    "Illustration",
-    "Digital Painting",
-    "Brand Identity",
-    "Typography",
-    "Packaging Design",
-    "UI/UX Design",
-    "Creative Coding"
+  "logoAndBranding": [
+    "One of very few designers who directs logo design at both best cost saving in production/application and catching customers at highest effectiveness based on modern material visual method.",
+    "Prioritize the importance of key visual systematically, which helps strongly recognizing the brand even without the logo.",
+    "Extensive art/culture foundation is a big advantage in high-class and not-easy-to-do logos."
   ],
-  "education": [
-    {
-      "year": "2018 - 2022",
-      "institution": "RMIT University Vietnam",
-      "degree": "Bachelor of Design (Digital Media)"
-    }
+  "artsAndDesign": [
+    "2014 - 2018: Top 1¼ badges and top 5% most viewed portfolios on CGSociety - one of the most professional world-class computer art communities;",
+    "2014: Winner in Graphics and Visual Communication Design Category - \"A Prime\" International Design Award - Como Italy;",
+    "2013: 3rd prize in Train Your Brain - the global contest in computer art hosted by The Art Department - USA and Deviantart.com - the largest online art community worldwide;",
+    "2011: Illustrations for the fairy tale \"Tu Thuc\" featured at the mentioned renowned page Deviantart.com;",
+    "2010: Awarded for \"Book cover set of the year\" by Nha Nam publishing house;",
+    "2009: Advisor in anatomy and environment drawing for \"Gray matter\" - an Euro point-and-click game developed by Wizarbox and published by DTP entertainment (partly produced at Phoenix - Hanoi based);",
+    "2009: \"Unreal 99.9%\" and \"Nho\" - 2 group exhibitions in digital painting - HCM City;",
+    "2008: The matte-painting artwork \"Ha Long bay\" featured on Zidean - the largest online art community in Vietnam then;",
+    "2004: In team with 2 artists Nguyen Ngoc Quan & Ha Lien Hoang to draw portrait for nearly 200 guests in one single evening - live performance at Honda's event \"Hello Vietnam\";"
+  ],
+  "tutoringAndAcademic": [
+    "2010 - 2013: Promoted famous artists/lecturers from Europe and America to bring their workshops in calligraphy, artbook, \"game jam\", design thinking, ... to local creative community.",
+    "2006 - 2012: Lead FPT-Arena's annual creative exhibition \"Just do it\". The 6 seasons has discovered and brought many young talents into spot light for the first time;",
+    "2009 - 2011: Working as assistant teacher for the renowned expert Richard Moore (who first brought & promoted \"marketing design\" into Vietnam) at Gologo - the very first professional logo courses then."
+  ],
+  "typography": [
+    "2004: \"CHU\" - The first private conceptual typography exhibition in Hanoi, including 24 artworks.",
+    "2010 - 2015: Hosted more than 20 courses, workshops and talks about typography in Hanoi and HCM city;",
+    "2013: \"Typeace\"- 4 experimental typography workshops hold for students with designer Pham Dam Ca. Collected artworks were exhibited at Manzi art space - Hanoi;",
+    "2013: \"Unlimited Letters\" - group exhibition at \"Zone 9 district\" - modern art complex in Hanoi;"
   ]
 }

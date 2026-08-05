@@ -16,38 +16,35 @@ export default function Navbar() {
   const navItems = [
     { label: 'ART', path: '/art' },
     { label: 'DESIGN', path: '/design' },
-    { label: 'PLAY', path: '/play' }
+    { label: 'PLAY', path: '/play' },
+    { label: 'BLOG', path: '/blog' },
+    { label: 'Bio & Contact', path: '/contact' }
   ];
 
   return (
     <>
       <nav className="navbar">
         <Link href="/" className="nav-logo" onClick={() => setIsMobileMenuOpen(false)}>
-          HIEPICTURE
+          HOME
         </Link>
         
-        {/* Desktop & Mobile Navigation Overlay */}
+        {/* Navigation Items with | Separators as in Design */}
         <div className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-          {navItems.map((item) => {
-            const isActive = pathname?.startsWith(item.path);
+          {navItems.map((item, index) => {
+            const isActive = item.path === '/contact' ? pathname === '/contact' : pathname?.startsWith(item.path);
             return (
-              <Link 
-                key={item.path} 
-                href={item.path} 
-                className={`nav-link ${isActive ? 'active' : ''}`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
+              <React.Fragment key={item.path}>
+                {index > 0 && <span className="nav-divider">|</span>}
+                <Link 
+                  href={item.path} 
+                  className={`nav-link ${isActive ? 'active' : ''}`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </React.Fragment>
             );
           })}
-          <Link 
-            href="/contact" 
-            className={`nav-link contact-link ${pathname === '/contact' ? 'active' : ''}`}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            CONTACT
-          </Link>
         </div>
 
         {/* Mobile Hamburger Button */}

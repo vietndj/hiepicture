@@ -1,100 +1,93 @@
 import { getBio } from '@/lib/content';
-import Timeline from '@/components/Timeline';
-import Link from 'next/link';
-
-export const revalidate = 60;
+import Image from 'next/image';
 
 export const metadata = {
-  title: 'Contact & Bio | HIEPICTURE',
-  description: 'Get in touch with HIEP — Visual Artist & Designer based in Ho Chi Minh City.',
+  title: 'Bio & Contact | HIEPICTURE',
 };
 
-export default async function ContactPage() {
+export default function ContactPage() {
   const bio = getBio();
 
   return (
-    <div className="contact-section">
-      <div className="contact-grid">
-        {/* Contact Info */}
-        <div className="contact-column">
-          <div className="contact-tag">GET IN TOUCH</div>
-
-          <div className="contact-field">
-            <div className="contact-label">EMAIL</div>
-            <a href={`mailto:${bio.email}`} className="contact-val">{bio.email}</a>
+    <div className="bio-contact-page">
+      <div className="bio-container">
+        {/* Left Column: Portrait & Contact Info */}
+        <div className="bio-portrait-col">
+          <div className="portrait-wrap">
+            <Image
+              src={bio.photo || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800"}
+              alt={bio.name}
+              width={400}
+              height={450}
+              style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+              priority
+            />
           </div>
 
-          <div className="contact-field">
-            <div className="contact-label">PHONE</div>
-            <span className="contact-val">{bio.phone}</span>
-          </div>
+          <div className="contact-info-block">
+            <div className="contact-field-label">EMAIL :</div>
+            <a href={`mailto:${bio.email}`} className="contact-field-value">{bio.email}</a>
 
-          <div className="contact-field">
-            <div className="contact-label">LOCATION</div>
-            <span className="contact-val">{bio.location}</span>
+            <div className="contact-field-label" style={{ marginTop: '1.5rem' }}>PHONE :</div>
+            <a href={`tel:${bio.phone}`} className="contact-field-value">{bio.phone}</a>
           </div>
+        </div>
 
-          {bio.socialLinks && typeof bio.socialLinks === 'object' && (
-            <div className="contact-field">
-              <div className="contact-label">SOCIAL</div>
-              <div className="social-links">
-                {Object.entries(bio.socialLinks).map(([platform, url]) => (
-                  <a
-                    key={platform}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-val"
-                    style={{ marginRight: '1.5rem', textTransform: 'capitalize' }}
-                  >
-                    {platform}
-                  </a>
+        {/* Right Area: 3 Equal Columns */}
+        <div className="bio-content-grid">
+          {/* Column 1: Occupation & Logo Branding */}
+          <div className="bio-col">
+            <div className="bio-section">
+              <h3 className="bio-section-title">Occupation</h3>
+              <ul className="bio-list">
+                {bio.occupation?.map((item, index) => (
+                  <li key={index}>{item}</li>
                 ))}
-              </div>
+              </ul>
             </div>
-          )}
-        </div>
 
-        {/* About */}
-        <div className="contact-column">
-          <div className="contact-tag">ABOUT</div>
-          <div className="about-text">
-            {bio.about?.split('\n\n').map((paragraph, i) => (
-              <p key={i} style={{ color: 'rgba(255,255,255,.65)', lineHeight: 1.8, marginBottom: '1rem', fontSize: '15px' }}>
-                {paragraph}
-              </p>
-            ))}
+            <div className="bio-section" style={{ marginTop: '2.5rem' }}>
+              <h3 className="bio-section-title">Logo & branding</h3>
+              <ul className="bio-list">
+                {bio.logoAndBranding?.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {bio.skills && (
-            <>
-              <div className="contact-tag" style={{ marginTop: '2rem' }}>SKILLS</div>
-              <div className="skills-list">
-                {bio.skills.map(skill => (
-                  <span key={skill} className="skill-tag">{skill}</span>
+          {/* Column 2: Arts & Design */}
+          <div className="bio-col">
+            <div className="bio-section">
+              <h3 className="bio-section-title">Arts & Design</h3>
+              <ul className="bio-list">
+                {bio.artsAndDesign?.map((item, index) => (
+                  <li key={index}>{item}</li>
                 ))}
-              </div>
-            </>
-          )}
-        </div>
+              </ul>
+            </div>
+          </div>
 
-        {/* Timeline */}
-        <div className="contact-column">
-          <div className="contact-tag">EXPERIENCE</div>
-          {bio.timeline && <Timeline items={bio.timeline} />}
+          {/* Column 3: Tutoring & Academic Head, Typography */}
+          <div className="bio-col">
+            <div className="bio-section">
+              <h3 className="bio-section-title">Tutoring & being Academic head</h3>
+              <ul className="bio-list">
+                {bio.tutoringAndAcademic?.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
 
-          {bio.education && (
-            <>
-              <div className="contact-tag" style={{ marginTop: '2rem' }}>EDUCATION</div>
-              {bio.education.map((edu, i) => (
-                <div key={i} className="contact-field">
-                  <div className="contact-label">{edu.year}</div>
-                  <span className="contact-val">{edu.institution}</span>
-                  <p style={{ color: 'rgba(255,255,255,.4)', fontSize: '12px', marginTop: '4px' }}>{edu.degree}</p>
-                </div>
-              ))}
-            </>
-          )}
+            <div className="bio-section" style={{ marginTop: '2.5rem' }}>
+              <h3 className="bio-section-title">Typography</h3>
+              <ul className="bio-list">
+                {bio.typography?.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
