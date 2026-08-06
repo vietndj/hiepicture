@@ -122,6 +122,19 @@ body {
   z-index: 100;
 }
 
+.navbar.navbar-transparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+
+.nav-logo-spacer {
+  width: 1px;
+}
+
 .nav-logo {
   font-family: var(--font-sans);
   font-size: 20px;
@@ -149,7 +162,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.6);
   transition: color 0.2s ease;
   padding: 4px 6px;
 }
@@ -179,7 +192,7 @@ body {
 /* Static Hero Page - Exact Match to Design Mockup */
 .hero-static-wrapper {
   position: relative;
-  height: calc(100vh - var(--nav-height));
+  height: 100vh;
   width: 100%;
   overflow: hidden;
   background-color: #d84c2a;
@@ -214,26 +227,33 @@ body {
 
 .hero-mockup-title {
   font-family: var(--font-sans);
-  font-size: clamp(4rem, 12vw, 13rem);
-  letter-spacing: 0.03em;
+  font-size: clamp(4rem, 12.5vw, 14rem);
+  letter-spacing: 0.02em;
   display: flex;
   align-items: center;
   line-height: 1;
   text-transform: uppercase;
   user-select: none;
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.35));
 }
 
-.title-bold {
+.title-hi {
+  font-weight: 900;
+  color: #b5b5b5;
+  letter-spacing: -0.01em;
+}
+
+.title-ep {
   font-weight: 900;
   color: #ffffff;
   letter-spacing: -0.01em;
 }
 
-.title-thin {
+.title-icture {
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.85);
+  color: #e0e0e0;
   margin-left: 2px;
+  letter-spacing: 0.02em;
 }
 
 .hero-mockup-subtitle {
@@ -244,7 +264,7 @@ body {
   font-family: var(--font-sans);
   font-size: 15px;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
   line-height: 1.6;
   text-align: right;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));

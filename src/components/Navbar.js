@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 export default function Navbar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isHomePage = pathname === '/';
 
   // Close mobile menu automatically on route change
   useEffect(() => {
@@ -23,10 +24,14 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="navbar">
-        <Link href="/" className="nav-logo" onClick={() => setIsMobileMenuOpen(false)}>
-          HOME
-        </Link>
+      <nav className={`navbar ${isHomePage ? 'navbar-transparent' : ''}`}>
+        {!isHomePage && (
+          <Link href="/" className="nav-logo" onClick={() => setIsMobileMenuOpen(false)}>
+            HOME
+          </Link>
+        )}
+
+        {isHomePage && <div className="nav-logo-spacer" />}
         
         {/* Navigation Items with | Separators as in Design */}
         <div className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
