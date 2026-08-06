@@ -15,11 +15,11 @@ export default function ContactPage() {
         <div className="bio-portrait-col">
           <div className="portrait-wrap">
             <Image
-              src={bio.photo || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800"}
-              alt={bio.name}
+              src={bio.photo || "/artist-hiep.jpg"}
+              alt={bio.name || "HIEP"}
               width={400}
-              height={450}
-              style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+              height={400}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               priority
             />
           </div>

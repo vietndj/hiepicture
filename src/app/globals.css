@@ -271,11 +271,11 @@ body {
 
 .portrait-wrap {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 1/1;
   overflow: hidden;
   border-radius: 2px;
   margin-bottom: 2rem;
-  background-color: #1a1a1a;
+  background-color: transparent;
 }
 
 .contact-info-block {
