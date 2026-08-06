@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div>
-        © {currentYear} HIEPICTURE. ALL RIGHTS RESERVED.
+        © {currentYear} HIEPICTURE.
       </div>
       <div>
         VISUAL ARTIST & DESIGNER
