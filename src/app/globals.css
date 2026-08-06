@@ -150,7 +150,7 @@ body {
 }
 
 .nav-divider {
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.3);
   margin: 0 0.8rem;
   font-size: 16px;
   user-select: none;
@@ -162,7 +162,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.65);
   transition: color 0.2s ease;
   padding: 4px 6px;
 }
@@ -223,23 +223,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .hero-mockup-title {
   font-family: var(--font-sans);
-  font-size: clamp(4rem, 12.5vw, 14rem);
+  font-size: clamp(3.5rem, 11.8vw, 13.5rem);
   letter-spacing: 0.02em;
   display: flex;
   align-items: center;
   line-height: 1;
   text-transform: uppercase;
   user-select: none;
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.25));
 }
 
 .title-hi {
   font-weight: 900;
-  color: #b5b5b5;
+  color: #aeaeae;
   letter-spacing: -0.01em;
 }
 
@@ -250,8 +251,8 @@ body {
 }
 
 .title-icture {
-  font-weight: 300;
-  color: #e0e0e0;
+  font-weight: 200;
+  color: #d6d6d6;
   margin-left: 2px;
   letter-spacing: 0.02em;
 }
@@ -260,14 +261,14 @@ body {
   position: absolute;
   bottom: 4.5rem;
   right: 5rem;
-  max-width: 460px;
+  max-width: 440px;
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 14px;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
   text-align: right;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
 }
 
 /* Bio & Contact Page - Exact Slide 1 & 2 Layout */

@@ -3,7 +3,7 @@ import React from 'react';
 export default function HomePage() {
   return (
     <div className="hero-static-wrapper">
-      {/* AI Cleaned Background Artwork (No Baked-in Text) */}
+      {/* Pristine Original Artwork Background (Text Removed with AI) */}
       <div 
         className="hero-static-bg"
         style={{ backgroundImage: `url('/hero-bg.jpg')` }}
