@@ -14,7 +14,6 @@ export default function AdminBar({ onOpenAddModal, onOpenEditModal }) {
     };
 
     checkAuth();
-    // Re-check on cookie changes or interval
     const interval = setInterval(checkAuth, 2000);
     return () => clearInterval(interval);
   }, []);
@@ -38,7 +37,9 @@ export default function AdminBar({ onOpenAddModal, onOpenEditModal }) {
   return (
     <div className="wordpress-admin-bar">
       <div className="admin-bar-left">
-        <span className="admin-bar-badge">● HIEPICTURE ADMIN</span>
+        <span className="admin-bar-badge">
+          <span className="admin-bar-badge-dot">●</span> HIEPICTURE ADMIN
+        </span>
         
         <button 
           className={`admin-mode-toggle ${editMode ? 'on' : 'off'}`}
