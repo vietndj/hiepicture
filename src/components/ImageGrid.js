@@ -20,7 +20,7 @@ export default function ImageGrid({ items, itemType = 'artwork' }) {
   }, []);
 
   if (!items || items.length === 0) {
-    return <div className="img-grid-empty">No items to display</div>;
+    return <div style={{ color: 'var(--text-muted)', padding: '2rem 0' }}>No items to display</div>;
   }
 
   const handleEditClick = (e, item) => {
@@ -34,6 +34,7 @@ export default function ImageGrid({ items, itemType = 'artwork' }) {
       <div className="img-grid">
         {items.map((item, index) => {
           const CardComponent = item.href ? Link : 'div';
+          const imgSrc = item.thumbnailUrl || item.imageUrl || item.coverImage || item.url;
           
           return (
             <div key={item.id} className="img-card-wrapper" style={{ position: 'relative' }}>
@@ -59,19 +60,21 @@ export default function ImageGrid({ items, itemType = 'artwork' }) {
                   }
                 }}
               >
-                <div className="img-wrap">
-                  <Image
-                    src={item.thumbnailUrl || item.imageUrl || item.coverImage || item.url}
-                    alt={item.title || 'Image'}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    unoptimized={true}
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-                <div className="img-info">
-                  <div className="img-title">{item.title || 'Untitled'}</div>
-                  {item.description && <div className="img-desc">{item.description}</div>}
+                {imgSrc && (
+                  <div style={{ position: 'absolute', inset: 0, opacity: 0.4 }}>
+                    <Image
+                      src={imgSrc}
+                      alt={item.title || 'Image'}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      unoptimized={true}
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                )}
+                
+                <div className="img-card-title" style={{ position: 'relative', zIndex: 2 }}>
+                  {item.title || 'Untitled'}
                 </div>
               </CardComponent>
             </div>

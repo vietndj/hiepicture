@@ -86,17 +86,27 @@
     "id": "play",
     "slug": "play",
     "name": "PLAY",
-    "description": "Experimental and personal creative works",
+    "description": "Short description about all albums above in Play menu",
     "items": [
       {
         "id": "river-phoenix",
         "slug": "river-phoenix",
-        "name": "River Phoenix Tribute"
+        "name": "River Phoenix"
       },
       {
         "id": "typography-lettering",
         "slug": "typography-lettering",
-        "name": "Calligraphy & Lettering"
+        "name": "Typography & Lettering"
+      },
+      {
+        "id": "play-concepts",
+        "slug": "play-concepts",
+        "name": "Concepts"
+      },
+      {
+        "id": "play-others",
+        "slug": "play-others",
+        "name": "Others"
       }
     ]
   }
