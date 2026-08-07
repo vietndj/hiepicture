@@ -2,47 +2,63 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function BlogCard({ post }) {
+export default function BlogCard({ post, isFeatured = false, isCompact = false }) {
   if (!post) return null;
 
+  const formattedDate = post.publishedAt 
+    ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+    : '';
+
   return (
-    <Link href={`/blog/${post.slug || '#'}`} className="blog-card">
-      <div className="blog-card-image">
-        {post.coverImage ? (
+    <Link 
+      href={`/blog/${post.slug || '#'}`} 
+      className={`medium-story-card ${isFeatured ? 'featured' : ''} ${isCompact ? 'compact' : ''}`}
+    >
+      {post.coverImage && (
+        <div className="story-image-wrap">
           <Image
             src={post.coverImage}
             alt={post.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             unoptimized={true}
+            style={{ objectFit: 'cover' }}
           />
-        ) : (
-          <div style={{ width: '100%', height: '100%', backgroundColor: '#eee' }}></div>
-        )}
-      </div>
-      <div className="blog-card-content">
-        {post.publishedAt && (
-          <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
-            {new Date(post.publishedAt).toLocaleDateString()}
+        </div>
+      )}
+
+      <div className="story-content-wrap">
+        {/* Author & Meta Row */}
+        <div className="story-author-row">
+          <div className="author-avatar-small">
+            <Image 
+              src={post.authorAvatar || '/artist-hiep.jpg'} 
+              alt={post.author || 'HIEP'} 
+              width={24} 
+              height={24}
+              style={{ borderRadius: '50%', objectFit: 'cover' }}
+            />
           </div>
+          <span className="author-name">{post.author || 'HIEP'}</span>
+          <span className="meta-dot">·</span>
+          <span className="story-date">{formattedDate}</span>
+        </div>
+
+        {/* Story Title */}
+        <h2 className="story-title">{post.title}</h2>
+
+        {/* Story Excerpt */}
+        {!isCompact && post.excerpt && (
+          <p className="story-excerpt">{post.excerpt}</p>
         )}
-        <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.75rem', lineHeight: 1.2 }}>
-          {post.title}
-        </h3>
-        {post.excerpt && (
-          <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '1rem' }}>
-            {post.excerpt}
-          </p>
-        )}
-        {post.tags && post.tags.length > 0 && (
-          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-            {post.tags.map(tag => (
-              <span key={tag} style={{ fontSize: '11px', color: 'var(--accent)', textTransform: 'uppercase' }}>
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+
+        {/* Footer Meta Row */}
+        <div className="story-footer-row">
+          <span className="story-reading-time">{post.readingTime || '4 min read'}</span>
+          {post.tags && post.tags.length > 0 && (
+            <span className="story-tag-pill">{post.tags[0]}</span>
+          )}
+        </div>
       </div>
     </Link>
   );
