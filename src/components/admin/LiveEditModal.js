@@ -67,15 +67,21 @@ export default function LiveEditModal({ isOpen, mode, itemType, initialData, onC
 
       if (res.ok) {
         const result = await res.json();
-        const url = result.url || result.secure_url;
-        handleChange(itemType === 'album' ? 'coverImage' : 'imageUrl', url);
-        handleChange('thumbnailUrl', url);
+        const url = result.url || result.displayUrl || result.secure_url;
+        if (url) {
+          handleChange(itemType === 'album' ? 'coverImage' : 'imageUrl', url);
+          handleChange('thumbnailUrl', url);
+          handleChange('imageUrl', url);
+        } else {
+          alert('Upload completed but no URL returned. Please enter URL manually.');
+        }
       } else {
-        alert('Image upload failed. Using URL instead.');
+        const errJson = await res.json().catch(() => ({}));
+        alert(errJson.error || 'Upload failed. Please enter URL manually.');
       }
     } catch (err) {
-      console.error(err);
-      alert('Error uploading image.');
+      console.error('Upload error:', err);
+      alert('Network error while uploading image.');
     } finally {
       setUploading(false);
     }
