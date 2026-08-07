@@ -250,7 +250,7 @@ body {
   letter-spacing: -0.01em;
 }
 
-.title-icture {
+.title-apture, .title-icture {
   font-weight: 200;
   color: #d6d6d6;
   margin-left: 2px;
@@ -648,6 +648,271 @@ body.admin-edit-active {
   background: rgba(255, 60, 60, 0.2);
   border-color: #ff4d4d;
   color: #ff6b6b;
+}
+
+/* Floating Admin Switch */
+.admin-floating-switch-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999999;
+}
+
+.admin-floating-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background-color: #1a1a1a !important;
+  border: 1px solid rgba(224, 74, 44, 0.4) !important;
+  border-radius: 30px !important;
+  color: #ffffff !important;
+  font-family: var(--font-sans) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+  transition: all 0.25s ease !important;
+}
+
+.admin-floating-switch:hover {
+  transform: translateY(-2px) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 12px 35px rgba(224, 74, 44, 0.3) !important;
+}
+
+.switch-pill {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.switch-pill.on {
+  background-color: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+.switch-pill.off {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Live Edit Modal Overlay & Glassmorphism Form */
+.live-edit-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.live-edit-modal {
+  background-color: #1a1a1a !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 12px !important;
+  width: 100% !important;
+  max-width: 620px !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  padding: 2.25rem !important;
+  color: #ffffff !important;
+  font-family: var(--font-sans) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85) !important;
+}
+
+.live-edit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.live-edit-header h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin: 0;
+  font-family: var(--font-sans);
+}
+
+.live-edit-close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s;
+}
+
+.live-edit-close:hover {
+  color: #ffffff;
+}
+
+.live-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.live-edit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.live-edit-field.flex-1 {
+  flex: 1;
+}
+
+.live-edit-row {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.live-edit-field label {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  text-transform: uppercase !important;
+}
+
+.live-edit-field input[type="text"],
+.live-edit-field input[type="url"],
+.live-edit-field textarea,
+.live-edit-field select {
+  background-color: #101010 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  font-family: var(--font-sans) !important;
+  font-size: 13.5px !important;
+  padding: 12px 16px !important;
+  border-radius: 6px !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.live-edit-field input:focus,
+.live-edit-field textarea:focus,
+.live-edit-field select:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(224, 74, 44, 0.2) !important;
+}
+
+.live-edit-preview {
+  width: 100%;
+  max-height: 180px;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+.live-edit-preview img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.live-edit-upload-box {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background-color: #101010;
+  padding: 12px 16px;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+
+.live-upload-btn {
+  background: rgba(224, 74, 44, 0.18) !important;
+  border: 1px solid var(--accent) !important;
+  color: var(--accent) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  padding: 8px 16px !important;
+  border-radius: 20px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.live-upload-btn:hover {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+.live-edit-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.live-btn-save {
+  background-color: var(--accent) !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-family: var(--font-sans) !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  padding: 10px 24px !important;
+  border-radius: 20px !important;
+  cursor: pointer !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.live-btn-save:hover {
+  opacity: 0.9 !important;
+}
+
+.live-btn-cancel {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+  border-radius: 20px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.live-btn-cancel:hover {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.live-btn-delete {
+  background: rgba(255, 50, 50, 0.15) !important;
+  border: 1px solid rgba(255, 50, 50, 0.3) !important;
+  color: #ff6b6b !important;
+  font-family: var(--font-sans) !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+  border-radius: 20px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.live-btn-delete:hover {
+  background: rgba(255, 50, 50, 0.3) !important;
+  color: #ffffff !important;
 }
 
 /* Component Utilities & Admin Design System Extras */
