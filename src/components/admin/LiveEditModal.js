@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function LiveEditModal({ isOpen, mode, itemType, initialData, onClose, onSaveSuccess }) {
   const [formData, setFormData] = useState({});
+  const [bulkImages, setBulkImages] = useState([]);
   const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [categories, setCategories] = useState([]);
@@ -11,7 +12,10 @@ export default function LiveEditModal({ isOpen, mode, itemType, initialData, onC
 
   useEffect(() => {
     if (initialData) {
-      setFormData(initialData);
+      setFormData({
+        published: true,
+        ...initialData
+      });
     } else {
       setFormData({
         title: '',
@@ -20,13 +24,14 @@ export default function LiveEditModal({ isOpen, mode, itemType, initialData, onC
         albumId: 'kafka-collection',
         imageUrl: '',
         coverImage: '',
+        published: true,
         tags: []
       });
     }
+    setBulkImages([]);
   }, [initialData, mode, itemType]);
 
   useEffect(() => {
-    // Fetch categories and albums for dropdown selectors
     const loadDropdowns = async () => {
       try {
         const [catRes, albumRes] = await Promise.all([
@@ -50,38 +55,47 @@ export default function LiveEditModal({ isOpen, mode, itemType, initialData, onC
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  // Image Upload Handler
+  // Bulk & Single Image Upload Handler
   const handleImageUpload = async (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+    const files = Array.from(e.target.files || []);
+    if (files.length === 0) return;
 
     setUploading(true);
+    const uploadedUrls = [];
+
     try {
-      const data = new FormData();
-      data.append('file', file);
+      for (const file of files) {
+        const data = new FormData();
+        data.append('file', file);
 
-      const res = await fetch('/api/upload', {
-        method: 'POST',
-        body: data,
-      });
+        const res = await fetch('/api/upload', {
+          method: 'POST',
+          body: data,
+        });
 
-      if (res.ok) {
-        const result = await res.json();
-        const url = result.url || result.displayUrl || result.secure_url;
-        if (url) {
-          handleChange(itemType === 'album' ? 'coverImage' : 'imageUrl', url);
-          handleChange('thumbnailUrl', url);
-          handleChange('imageUrl', url);
+        if (res.ok) {
+          const result = await res.json();
+          const url = result.url || result.displayUrl || result.secure_url;
+          if (url) uploadedUrls.push({ url, name: file.name.replace(/\.[^/.]+$/, "") });
+        }
+      }
+
+      if (uploadedUrls.length > 0) {
+        if (files.length === 1 || mode === 'edit') {
+          const firstUrl = uploadedUrls[0].url;
+          handleChange(itemType === 'album' ? 'coverImage' : 'imageUrl', firstUrl);
+          handleChange('thumbnailUrl', firstUrl);
         } else {
-          alert('Upload completed but no URL returned. Please enter URL manually.');
+          // Bulk Mode: Store list of uploaded images to bulk-create artworks on save
+          setBulkImages(uploadedUrls);
+          handleChange('imageUrl', uploadedUrls[0].url);
         }
       } else {
-        const errJson = await res.json().catch(() => ({}));
-        alert(errJson.error || 'Upload failed. Please enter URL manually.');
+        alert('Upload failed. Please enter URL manually.');
       }
     } catch (err) {
       console.error('Upload error:', err);
-      alert('Network error while uploading image.');
+      alert('Network error while uploading images.');
     } finally {
       setUploading(false);
     }
@@ -93,27 +107,41 @@ export default function LiveEditModal({ isOpen, mode, itemType, initialData, onC
     setSaving(true);
 
     try {
-      // 1. Fetch current content array
       const apiEndpoint = `/api/content/${itemType === 'artwork' ? 'artworks' : itemType === 'album' ? 'albums' : 'blog'}`;
       const res = await fetch(apiEndpoint);
       let currentItems = await res.json();
       if (!Array.isArray(currentItems)) currentItems = [];
 
       let updatedItems = [];
+
       if (mode === 'edit') {
         updatedItems = currentItems.map(item => item.id === formData.id ? { ...item, ...formData } : item);
+      } else if (bulkImages.length > 1 && itemType === 'artwork') {
+        // Bulk Create Multiple Artworks at Once
+        const newArtworks = bulkImages.map((img, idx) => ({
+          ...formData,
+          id: `artwork-${Date.now()}-${idx}`,
+          title: formData.title ? `${formData.title} (${idx + 1})` : img.name,
+          imageUrl: img.url,
+          thumbnailUrl: img.url,
+          order: currentItems.length + idx + 1,
+          published: formData.published !== false,
+          createdAt: new Date().toISOString()
+        }));
+        updatedItems = [...currentItems, ...newArtworks];
       } else {
+        // Single Create
         const newItem = {
           ...formData,
           id: `${itemType}-${Date.now()}`,
-          slug: formData.slug || formData.title.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+          slug: formData.slug || (formData.title ? formData.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') : `${itemType}-${Date.now()}`),
           order: currentItems.length + 1,
+          published: formData.published !== false,
           createdAt: new Date().toISOString()
         };
         updatedItems = [...currentItems, newItem];
       }
 
-      // 2. PUT updated array back to API
       const saveRes = await fetch(apiEndpoint, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -177,16 +205,29 @@ export default function LiveEditModal({ isOpen, mode, itemType, initialData, onC
         </div>
 
         <form onSubmit={handleSave} className="live-edit-form">
-          {/* Title */}
-          <div className="live-edit-field">
-            <label>TITLE</label>
-            <input 
-              type="text" 
-              value={formData.title || ''} 
-              onChange={e => handleChange('title', e.target.value)} 
-              required
-              placeholder="Title..."
-            />
+          {/* Title & Status Row */}
+          <div className="live-edit-row">
+            <div className="live-edit-field flex-1">
+              <label>TITLE</label>
+              <input 
+                type="text" 
+                value={formData.title || ''} 
+                onChange={e => handleChange('title', e.target.value)} 
+                required={mode === 'edit' || bulkImages.length <= 1}
+                placeholder="Title..."
+              />
+            </div>
+
+            <div className="live-edit-field" style={{ width: '180px' }}>
+              <label>VISIBILITY / STATUS</label>
+              <select 
+                value={formData.published !== false ? 'published' : 'draft'} 
+                onChange={e => handleChange('published', e.target.value === 'published')}
+              >
+                <option value="published">👁️ Published</option>
+                <option value="draft">🙈 Draft (Hidden)</option>
+              </select>
+            </div>
           </div>
 
           {/* Description */}
@@ -200,9 +241,12 @@ export default function LiveEditModal({ isOpen, mode, itemType, initialData, onC
             />
           </div>
 
-          {/* Image Picker / Upload */}
+          {/* Image Picker / Bulk Upload */}
           <div className="live-edit-field">
-            <label>IMAGE / COVER PHOTO</label>
+            <label>
+              IMAGE / COVER PHOTO {bulkImages.length > 0 && `(${bulkImages.length} images queued for bulk upload)`}
+            </label>
+            
             {imageSrc && (
               <div className="live-edit-preview">
                 <img src={imageSrc} alt="Preview" />
@@ -213,12 +257,13 @@ export default function LiveEditModal({ isOpen, mode, itemType, initialData, onC
               <input 
                 type="file" 
                 accept="image/*" 
+                multiple={mode === 'create' && itemType === 'artwork'}
                 onChange={handleImageUpload}
                 id="live-file-input"
                 style={{ display: 'none' }}
               />
               <label htmlFor="live-file-input" className="live-upload-btn">
-                {uploading ? 'Uploading...' : '📁 Choose Image File'}
+                {uploading ? 'Uploading...' : mode === 'create' && itemType === 'artwork' ? '📁 Choose File(s) / Bulk Upload' : '📁 Choose Image File'}
               </label>
 
               <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>OR enter image URL:</span>
@@ -236,7 +281,7 @@ export default function LiveEditModal({ isOpen, mode, itemType, initialData, onC
             </div>
           </div>
 
-          {/* Category Dropdown (if artwork or album) */}
+          {/* Category Dropdown */}
           {itemType !== 'blog' && (
             <div className="live-edit-row">
               <div className="live-edit-field flex-1">
@@ -280,7 +325,7 @@ export default function LiveEditModal({ isOpen, mode, itemType, initialData, onC
                 Cancel
               </button>
               <button type="submit" disabled={saving || uploading} className="live-btn-save">
-                {saving ? 'Saving...' : '💾 Save Changes'}
+                {saving ? 'Saving...' : bulkImages.length > 1 ? `💾 Save All ${bulkImages.length} Artworks` : '💾 Save Changes'}
               </button>
             </div>
           </div>

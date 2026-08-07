@@ -10,7 +10,12 @@
     "albumId": "kafka-collection",
     "imageUrl": "https://images.unsplash.com/photo-1549490349-8643362247b5?w=1200",
     "thumbnailUrl": "https://images.unsplash.com/photo-1549490349-8643362247b5?w=400&h=300&fit=crop",
-    "tags": ["illustration", "kafka", "digital", "surrealism"],
+    "tags": [
+      "illustration",
+      "kafka",
+      "digital",
+      "surrealism"
+    ],
     "order": 1
   },
   {
@@ -24,7 +29,11 @@
     "albumId": "kafka-collection",
     "imageUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200",
     "thumbnailUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=300&fit=crop",
-    "tags": ["kafka", "surrealism", "ink"],
+    "tags": [
+      "kafka",
+      "surrealism",
+      "ink"
+    ],
     "order": 2
   },
   {
@@ -38,7 +47,11 @@
     "albumId": "kafka-collection",
     "imageUrl": "https://images.unsplash.com/photo-1618331835717-801e976710b2?w=1200",
     "thumbnailUrl": "https://images.unsplash.com/photo-1618331835717-801e976710b2?w=400&h=300&fit=crop",
-    "tags": ["interior", "digital", "environment"],
+    "tags": [
+      "interior",
+      "digital",
+      "environment"
+    ],
     "order": 3
   },
   {
@@ -52,7 +65,11 @@
     "albumId": "tu-thuc",
     "imageUrl": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=1200",
     "thumbnailUrl": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=400&h=300&fit=crop",
-    "tags": ["fairy tale", "vietnamese", "mythology"],
+    "tags": [
+      "fairy tale",
+      "vietnamese",
+      "mythology"
+    ],
     "order": 1
   },
   {
@@ -66,7 +83,11 @@
     "albumId": "tu-thuc",
     "imageUrl": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=1200",
     "thumbnailUrl": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=300&fit=crop",
-    "tags": ["landscape", "traditional", "vietnam"],
+    "tags": [
+      "landscape",
+      "traditional",
+      "vietnam"
+    ],
     "order": 2
   },
   {
@@ -80,7 +101,11 @@
     "albumId": "trung-nguyen",
     "imageUrl": "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1200",
     "thumbnailUrl": "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=300&fit=crop",
-    "tags": ["epic", "branding", "coffee"],
+    "tags": [
+      "epic",
+      "branding",
+      "coffee"
+    ],
     "order": 1
   },
   {
@@ -93,7 +118,11 @@
     "albumId": "album-covers",
     "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200",
     "thumbnailUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=300&fit=crop",
-    "tags": ["music", "cover", "vinyl"],
+    "tags": [
+      "music",
+      "cover",
+      "vinyl"
+    ],
     "order": 1
   },
   {
@@ -107,7 +136,11 @@
     "albumId": "fb-organic",
     "imageUrl": "https://images.unsplash.com/photo-1482160549825-59d1b23cb208?w=1200",
     "thumbnailUrl": "https://images.unsplash.com/photo-1482160549825-59d1b23cb208?w=400&h=300&fit=crop",
-    "tags": ["logo", "organic", "identity"],
+    "tags": [
+      "logo",
+      "organic",
+      "identity"
+    ],
     "order": 1
   },
   {
@@ -121,7 +154,11 @@
     "albumId": "dao-toc",
     "imageUrl": "https://images.unsplash.com/photo-1618331835717-801e976710b2?w=1200",
     "thumbnailUrl": "https://images.unsplash.com/photo-1618331835717-801e976710b2?w=400&h=300&fit=crop",
-    "tags": ["case-study", "emblem", "heraldry"],
+    "tags": [
+      "case-study",
+      "emblem",
+      "heraldry"
+    ],
     "order": 1
   },
   {
@@ -134,7 +171,11 @@
     "albumId": "river-phoenix",
     "imageUrl": "https://images.unsplash.com/photo-1517697471339-4aa32003c11a?w=1200",
     "thumbnailUrl": "https://images.unsplash.com/photo-1517697471339-4aa32003c11a?w=400&h=300&fit=crop",
-    "tags": ["tribute", "portrait", "cinema"],
+    "tags": [
+      "tribute",
+      "portrait",
+      "cinema"
+    ],
     "order": 1
   }
 ]
