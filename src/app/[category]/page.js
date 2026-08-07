@@ -33,19 +33,25 @@ export default async function CategoryPage({ params }) {
       <div className="panel-main">
         <div className="img-grid">
           {albums.map(album => (
-            <Link key={album.id} href={`/${category}/${album.slug}`} className="img-card">
-              {album.coverImage && (
-                <div style={{ position: 'absolute', inset: 0, opacity: 0.35 }}>
+            <Link key={album.id} href={`/${category}/${album.slug}`} className="album-card-vibrant">
+              {/* Full Vibrant Color Image */}
+              {album.coverImage ? (
+                <div className="album-cover-full">
                   <Image
                     src={album.coverImage}
                     alt={album.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
                     unoptimized
                   />
                 </div>
+              ) : (
+                <div className="album-cover-placeholder" />
               )}
-              <div className="img-card-title" style={{ position: 'relative', zIndex: 2 }}>
+
+              {/* Small Tag Title Badge Overlay */}
+              <div className="album-tag-badge">
                 {album.title}
               </div>
             </Link>

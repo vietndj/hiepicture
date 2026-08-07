@@ -467,7 +467,7 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Image Grid Cards */
+/* Image Grid & Vibrant Album Cards */
 .img-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -478,33 +478,69 @@ body {
   position: relative;
 }
 
-.img-card {
-  background-color: var(--bg-card);
+.album-card-vibrant {
   aspect-ratio: 4/3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   position: relative;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 3px;
+  background-color: #222222;
   text-decoration: none !important;
   color: var(--text-light) !important;
-  transition: transform 0.25s ease, filter 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-.img-card:hover {
+.album-card-vibrant:hover {
   transform: scale(1.02);
-  filter: brightness(1.08);
+  border-color: var(--accent);
 }
 
-.img-card-title {
+.album-cover-full {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1; /* 100% Full Vibrant Color */
+  transition: transform 0.4s ease;
+}
+
+.album-card-vibrant:hover .album-cover-full {
+  transform: scale(1.04);
+}
+
+.album-cover-placeholder {
+  position: absolute;
+  inset: 0;
+  background: #333333;
+}
+
+.album-tag-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(18, 18, 18, 0.88);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
   font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
-  text-align: center;
-  padding: 1rem;
-  z-index: 2;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 5;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.2s ease, background 0.2s ease;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.album-card-vibrant:hover .album-tag-badge {
+  border-color: var(--accent);
+  background: rgba(224, 74, 44, 0.85);
 }
 
 /* Content-First Editorial Blog System */

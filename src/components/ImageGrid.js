@@ -51,7 +51,7 @@ export default function ImageGrid({ items, itemType = 'artwork' }) {
 
               <CardComponent 
                 href={item.href || '#'} 
-                className="img-card"
+                className="album-card-vibrant"
                 onClick={(e) => {
                   if (!item.href) {
                     e.preventDefault();
@@ -60,8 +60,9 @@ export default function ImageGrid({ items, itemType = 'artwork' }) {
                   }
                 }}
               >
-                {imgSrc && (
-                  <div style={{ position: 'absolute', inset: 0, opacity: 0.4 }}>
+                {/* Full Vibrant Color Image (100% Opacity) */}
+                {imgSrc ? (
+                  <div className="album-cover-full">
                     <Image
                       src={imgSrc}
                       alt={item.title || 'Image'}
@@ -71,9 +72,12 @@ export default function ImageGrid({ items, itemType = 'artwork' }) {
                       style={{ objectFit: 'cover' }}
                     />
                   </div>
+                ) : (
+                  <div className="album-cover-placeholder" />
                 )}
                 
-                <div className="img-card-title" style={{ position: 'relative', zIndex: 2 }}>
+                {/* Small Tag Title Badge Overlay */}
+                <div className="album-tag-badge">
                   {item.title || 'Untitled'}
                 </div>
               </CardComponent>
