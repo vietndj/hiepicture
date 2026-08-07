@@ -5,48 +5,27 @@ export const revalidate = 60;
 
 export const metadata = {
   title: 'BLOG | HIEPICTURE',
-  description: 'Articles, essays, and creative thoughts on visual art, calligraphy, typography, and design by HIEP.',
+  description: 'Góc chia sẻ về tư duy sáng tác, triết lý nét cọ Á Đông và thiết kế thị giác của HIEP.',
 };
 
 export default async function BlogPage() {
   const posts = await getBlogPosts();
-  const featuredPost = posts[0];
-  const sidePosts = posts.slice(1, 3);
 
   return (
-    <div className="medium-blog-layout">
-      {/* Blog Hero Header */}
-      <div className="blog-header-section">
-        <h1 className="blog-main-title">ESSAYS & PERSPECTIVES</h1>
-        <p className="blog-main-subtitle">
-          Thoughts on visual art, calligraphy, typography, and creative process by HIEP.
+    <div className="editorial-blog-container">
+      {/* Blog Header & Intro */}
+      <header className="editorial-blog-header">
+        <h1 className="editorial-page-title">BLOG & WRITINGS</h1>
+        <p className="editorial-page-subtitle">
+          Góc chia sẻ của HIEP về hành trình sáng tác, triết lý nét cọ Á Đông, thiết kế chữ và các thử nghiệm thị giác.
         </p>
-      </div>
+      </header>
 
-      {/* Featured 2-Column Hero Section (Medium.com style) */}
-      {featuredPost && (
-        <div className="medium-hero-section">
-          <div className="hero-featured-main">
-            <BlogCard post={featuredPost} isFeatured={true} />
-          </div>
-
-          <div className="hero-featured-side">
-            <div className="side-heading">LATEST WRITINGS</div>
-            {sidePosts.map(post => (
-              <BlogCard key={post.id || post.slug} post={post} isCompact={true} />
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* All Stories Feed Section */}
-      <div className="stories-feed-section">
-        <div className="feed-heading">ALL STORIES</div>
-        <div className="stories-feed-grid">
-          {posts.map(post => (
-            <BlogCard key={post.id || post.slug} post={post} />
-          ))}
-        </div>
+      {/* Story Feed List */}
+      <div className="editorial-story-feed">
+        {posts.map((post) => (
+          <BlogCard key={post.id || post.slug} post={post} />
+        ))}
       </div>
     </div>
   );
